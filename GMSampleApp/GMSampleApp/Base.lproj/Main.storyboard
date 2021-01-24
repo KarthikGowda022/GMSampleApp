@@ -27,21 +27,21 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="22V-fS-XNB"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1t-1d-XHf">
-                                            <rect key="frame" x="20" y="42" width="374" height="21"/>
+                                            <rect key="frame" x="20" y="40" width="374" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="vkd-7E-uc7"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91d-wl-wM9">
-                                            <rect key="frame" x="20" y="73" width="374" height="64"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91d-wl-wM9">
+                                            <rect key="frame" x="20" y="71" width="374" height="66"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                                         <constraint firstItem="u6E-j5-HX3" firstAttribute="leading" secondItem="Ckj-dP-2lM" secondAttribute="leadingMargin" id="NdP-Ir-5ws"/>
                                         <constraint firstItem="y1t-1d-XHf" firstAttribute="trailing" secondItem="Ckj-dP-2lM" secondAttribute="trailingMargin" id="Wnh-Pj-dBq"/>
                                         <constraint firstAttribute="trailing" secondItem="91d-wl-wM9" secondAttribute="trailing" constant="20" id="aJi-Ve-VU4"/>
-                                        <constraint firstItem="y1t-1d-XHf" firstAttribute="top" secondItem="u6E-j5-HX3" secondAttribute="bottom" constant="10" id="cxM-XK-rwD"/>
+                                        <constraint firstItem="y1t-1d-XHf" firstAttribute="top" secondItem="u6E-j5-HX3" secondAttribute="bottom" constant="8" id="cxM-XK-rwD"/>
                                         <constraint firstItem="u6E-j5-HX3" firstAttribute="top" secondItem="Ckj-dP-2lM" secondAttribute="topMargin" id="htp-TW-MGO"/>
                                         <constraint firstItem="u6E-j5-HX3" firstAttribute="trailing" secondItem="Ckj-dP-2lM" secondAttribute="trailingMargin" id="k9j-QI-wyV"/>
                                         <constraint firstAttribute="bottom" secondItem="91d-wl-wM9" secondAttribute="bottom" constant="10" id="kLH-EW-Vhq"/>
