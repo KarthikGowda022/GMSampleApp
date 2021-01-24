@@ -13,6 +13,9 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        ServiceManager.sharedManager.fetchGitCommits { (result) in
+            print(result)
+        }
     }
 
 
