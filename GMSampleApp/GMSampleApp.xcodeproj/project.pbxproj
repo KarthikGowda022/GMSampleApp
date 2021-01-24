@@ -15,6 +15,7 @@
 		1992E48425BD575B00CD86BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1992E48225BD575B00CD86BD /* LaunchScreen.storyboard */; };
 		1992E48F25BD575B00CD86BD /* GMSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992E48E25BD575B00CD86BD /* GMSampleAppTests.swift */; };
 		1992E49A25BD575B00CD86BD /* GMSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49925BD575B00CD86BD /* GMSampleAppUITests.swift */; };
+		1992E4A825BD5AFF00CD86BD /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992E4A725BD5AFF00CD86BD /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1992E49525BD575B00CD86BD /* GMSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1992E49925BD575B00CD86BD /* GMSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSampleAppUITests.swift; sourceTree = "<group>"; };
 		1992E49B25BD575B00CD86BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1992E4A725BD5AFF00CD86BD /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				1992E48025BD575B00CD86BD /* Assets.xcassets */,
 				1992E48225BD575B00CD86BD /* LaunchScreen.storyboard */,
 				1992E48525BD575B00CD86BD /* Info.plist */,
+				1992E4A725BD5AFF00CD86BD /* ServiceManager.swift */,
 			);
 			path = GMSampleApp;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				1992E47C25BD575800CD86BD /* ViewController.swift in Sources */,
 				1992E47825BD575800CD86BD /* AppDelegate.swift in Sources */,
 				1992E47A25BD575800CD86BD /* SceneDelegate.swift in Sources */,
+				1992E4A825BD5AFF00CD86BD /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
