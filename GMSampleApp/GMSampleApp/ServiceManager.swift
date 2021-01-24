@@ -14,7 +14,9 @@ class ServiceManager {
     
     func fetchGitCommits(_ completion:@escaping (([GitNode]?) -> Void)){
         
-        guard let requestUrl = URL(string: "https://api.github.com/repos/KarthikGowda022/GMSampleApp/commits?per_page=25") else { return completion(nil)}
+        // https://api.github.com/repos/{user}/{repo}/commits?per_page={count}
+        let urlString = String("\(Constants.Service.baseUrl)/repos/\(Constants.Service.repoName)/commits?per_page=\(Constants.Service.numberOfCommits)")
+        guard let requestUrl = URL(string: urlString) else { return completion(nil)}
         
         
         let dataTask = URLSession.shared.dataTask(with: requestUrl) { (data, urlResponse, error) in

@@ -14,7 +14,7 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Git log"
+        self.navigationItem.title = Constants.Views.navigationTitle
         // Do any additional setup after loading the view.
         ServiceManager.sharedManager.fetchGitCommits { (result) in
             if let list = result {
@@ -42,7 +42,7 @@ extension ViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CommitCell") as? GitCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Views.cellIdentifier) as? GitCell{
             
             let commitDetails = gitCommits[indexPath.row]
             cell.githash.text = commitDetails.sha

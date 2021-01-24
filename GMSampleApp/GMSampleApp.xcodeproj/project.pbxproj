@@ -17,6 +17,7 @@
 		1992E49A25BD575B00CD86BD /* GMSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49925BD575B00CD86BD /* GMSampleAppUITests.swift */; };
 		1992E4A825BD5AFF00CD86BD /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992E4A725BD5AFF00CD86BD /* ServiceManager.swift */; };
 		1992E4AC25BD5D9D00CD86BD /* GitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992E4AB25BD5D9D00CD86BD /* GitNode.swift */; };
+		1992E4B025BD7CC200CD86BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992E4AF25BD7CC200CD86BD /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1992E49B25BD575B00CD86BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1992E4A725BD5AFF00CD86BD /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		1992E4AB25BD5D9D00CD86BD /* GitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitNode.swift; sourceTree = "<group>"; };
+		1992E4AF25BD7CC200CD86BD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				1992E47725BD575800CD86BD /* AppDelegate.swift */,
 				1992E47925BD575800CD86BD /* SceneDelegate.swift */,
 				1992E47B25BD575800CD86BD /* ViewController.swift */,
+				1992E4AF25BD7CC200CD86BD /* Constants.swift */,
 				1992E4AB25BD5D9D00CD86BD /* GitNode.swift */,
 				1992E47D25BD575800CD86BD /* Main.storyboard */,
 				1992E48025BD575B00CD86BD /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 				1992E47A25BD575800CD86BD /* SceneDelegate.swift in Sources */,
 				1992E4AC25BD5D9D00CD86BD /* GitNode.swift in Sources */,
 				1992E4A825BD5AFF00CD86BD /* ServiceManager.swift in Sources */,
+				1992E4B025BD7CC200CD86BD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
