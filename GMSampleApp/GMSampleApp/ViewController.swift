@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UITableViewController {
 
+    var gitCommits = [GitNode]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Git log"
         // Do any additional setup after loading the view.
         ServiceManager.sharedManager.fetchGitCommits { (result) in
-            print(result)
+            if let list = result {
+                self.gitCommits = list
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
 
@@ -24,7 +33,7 @@ class ViewController: UITableViewController {
 extension ViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return gitCommits.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,10 +43,12 @@ extension ViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CommitCell") as? GitCell{
-
-            cell.author.text = "Author\(indexPath.row)"
-            cell.githash.text = "Hash123"
-            cell.message.text = "Sample git message by author \(indexPath.row)"
+            
+            let commitDetails = gitCommits[indexPath.row]
+            cell.githash.text = commitDetails.sha
+            cell.author.text = commitDetails.commit.author.name
+            cell.message.text = commitDetails.commit.message
+            
             return cell
         }
         
