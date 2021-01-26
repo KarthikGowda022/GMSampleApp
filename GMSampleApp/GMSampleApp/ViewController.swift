@@ -8,6 +8,15 @@
 
 import UIKit
 
+typealias GitHubGetUserCallback = ([GitNode]) -> Void
+typealias ErrorCallback = (Error) -> Void
+
+protocol GitHubApiClient {
+   func fetchGitCommits(repoName: String,
+                             onSuccess:@escaping GitHubGetUserCallback,
+                               onError:@escaping ErrorCallback)
+}
+
 class ViewController: UITableViewController {
 
     var gitCommits = [GitNode]()
@@ -16,14 +25,14 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = Constants.Views.navigationTitle
         // Do any additional setup after loading the view.
-        ServiceManager.sharedManager.fetchGitCommits { (result) in
-            if let list = result {
-                self.gitCommits = list
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+        ServiceManager.sharedManager.fetchGitCommits(repoName:Constants.Service.repoName, onSuccess: { (result) in
+            self.gitCommits = result
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
+        }) { (error) in
+            print(error)
         }
     }
 

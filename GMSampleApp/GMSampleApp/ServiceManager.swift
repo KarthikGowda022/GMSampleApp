@@ -12,11 +12,19 @@ class ServiceManager {
     
     static let sharedManager = ServiceManager()
     
-    func fetchGitCommits(_ completion:@escaping (([GitNode]?) -> Void)){
-        
+    enum NetworkError: Error {
+           case badUrl
+           case responseError
+           case responseNoData
+           case decodeError
+       }
+    
+    func fetchGitCommits(repoName: String,
+                              onSuccess: @escaping GitHubGetUserCallback,
+                              onError: @escaping ErrorCallback){
         // https://api.github.com/repos/{user}/{repo}/commits?per_page={count}
-        let urlString = String("\(Constants.Service.baseUrl)/repos/\(Constants.Service.repoName)/commits?per_page=\(Constants.Service.numberOfCommits)")
-        guard let requestUrl = URL(string: urlString) else { return completion(nil)}
+        let urlString = String("\(Constants.Service.baseUrl)/repos/\(repoName)/commits?per_page=\(Constants.Service.numberOfCommits)")
+        guard let requestUrl = URL(string: urlString) else { return onError(NetworkError.badUrl)}
         
         
         let dataTask = URLSession.shared.dataTask(with: requestUrl) { (data, urlResponse, error) in
@@ -24,10 +32,10 @@ class ServiceManager {
             if let responseData = data{
                 
                 do {
-                    let result = try JSONDecoder.init().decode([GitNode].self, from: responseData)
-                    completion(result)
+                    let result:[GitNode] = try JSONDecoder.init().decode([GitNode].self, from: responseData)
+                    onSuccess(result)
                 } catch  {
-                    print(error)
+                    onError(NetworkError.decodeError)
                 }
             }
         }
