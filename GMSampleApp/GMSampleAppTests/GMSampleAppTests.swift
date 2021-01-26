@@ -20,6 +20,7 @@ class MockServiceManger: GitHubApiClient {
         
         let firstCommit = GitNode(nodeId: "MDY6Q29tbWl0MzMyMzg5OTU5OmIwZmFkNzIyYjAyZmQzYTQwNjQ5OTZhZjM5NzYwNGVmMmY4YmUxMzY=", sha: "b0fad722b02fd3a4064996af397604ef2f8be136", commit: GitCommit(author:author1 , committer: author1, message: "Initial commit"))
         
+        //Need to be updated frequently
         let recentCommit = GitNode(nodeId: "MDY6Q29tbWl0MzMyMzg5OTU5OmIwZmFkNzIyYjAyZmQzYTQwNjQ5OTZhZjM5NzYwNGVmMmY4YmUxMzY=", sha: "b0fad722b02fd3a4064996af397604ef2f8be136", commit: GitCommit(author:author2 , committer: author2, message: "Added error handling and code cleanup"))
         
         onSuccess([recentCommit, firstCommit])
@@ -67,10 +68,16 @@ class GMSampleAppTests: XCTestCase {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
             }
             XCTAssertNotNil(fetchResults, "Service returned empty respnse")
+            
+            //This will fails (as of now, there less than 25 commit my git repo)
+            XCTAssert(fetchResults.count == 25, "Did not fetch the recent 25 commits")
         }
         
     }
 
+    //This test will fail when the number of commits in git repo reacheds >25.
+    //As we are fetching only recent 25 commits
+    //Just for demo purpose
     func testFirstCommit(){
         var mockResults = [GitNode]()
         
