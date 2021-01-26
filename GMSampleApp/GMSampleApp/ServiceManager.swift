@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ServiceManager {
+class ServiceManager: GitHubApiClient{
     
     static let sharedManager = ServiceManager()
     
